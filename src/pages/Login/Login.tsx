@@ -1,5 +1,12 @@
 import React, { FC } from 'react';
-import { KeyboardAvoidingView, ScrollView, StatusBar } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  View,
+} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import imageLogin from '../../assets/img/imageLogin.png';
 import { isIOS } from '../../utils/constants';
@@ -25,7 +32,19 @@ const Login: FC = () => {
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{ flex: 1 }}>
           <ContainerLogin>
-            <ContainerImage source={imageLogin} />
+            <ContainerImage source={imageLogin}>
+              <LinearGradient
+                start={{ x: 0, y: 0.3 }}
+                end={{ x: 0, y: 1 }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                colors={['#69399925', '#693999', '#130525']}
+              />
+            </ContainerImage>
             <CardLogin />
           </ContainerLogin>
         </ScrollView>

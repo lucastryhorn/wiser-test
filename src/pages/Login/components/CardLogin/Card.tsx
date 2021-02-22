@@ -6,7 +6,7 @@ import Form from '../Form';
 import { ContainerCardLogin } from './styles';
 
 const CardLogin: FC = () => {
-  const theme = useTheme();
+  const { colors } = useTheme();
 
   return (
     <ContainerCardLogin>
@@ -15,11 +15,7 @@ const CardLogin: FC = () => {
         <Text>bem-vindo!</Text>
       </Text>
       <View style={{ marginTop: 16, marginBottom: 16 }}>
-        <Text
-          fontSize="12px"
-          lineHeight="20px"
-          semiBold
-          color={theme.colors.primary}>
+        <Text fontSize="12px" lineHeight="20px" semiBold color={colors.primary}>
           Para acessar a plataforma, faça seu login.
         </Text>
       </View>

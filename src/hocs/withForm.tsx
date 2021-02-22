@@ -1,37 +1,30 @@
-import React from 'react';
-import {
-  useForm,
-  Controller,
-  useWatch,
-  FormProviderProps,
-} from 'react-hook-form';
+import React, { ElementType } from 'react';
+import { useForm, DefaultValues } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { AnyObjectSchema } from 'yup';
+
+type withFormTypes = {
+  validationSchema: AnyObjectSchema;
+  defaultValues: DefaultValues<object>;
+};
 
 export const withForm = (
-  EnhancedComponent,
-  { validationSchema, defaultValues },
-) => props => {
+  EnhancedComponent: ElementType,
+  { validationSchema, defaultValues }: withFormTypes,
+) => () => {
   const { handleSubmit, setValue, register, ...restProps } = useForm({
     mode: 'onSubmit',
     reValidateMode: 'onChange',
     defaultValues,
     resolver: yupResolver(validationSchema),
-    validationResolver: undefined,
-    validationContext: undefined,
-    validateCriteriaMode: 'firstError',
-    submitFocusError: true,
-    nativeValidation: false,
   });
 
   return (
     <EnhancedComponent
-      {...props}
       {...restProps}
       register={register}
       setValue={setValue}
       handleSubmit={handleSubmit}
-      Controller={Controller}
-      useWatch={useWatch}
     />
   );
 };

@@ -10,3 +10,8 @@ export type UserType = {
 export type Error = {
   message?: string;
 };
+
+export type Modal = {
+  open: boolean;
+  message?: string;
+};

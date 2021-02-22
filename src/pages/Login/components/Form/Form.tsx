@@ -74,7 +74,8 @@ const Form = ({ handleSubmit, errors, control }: LoginFormProps) => {
           onPress={handleSubmit(submit)}
           width="160px"
           height="48px"
-          textColor="white">
+          textColor="white"
+          colors={['#9D25B0', '#383E71']}>
           ENTRAR
         </Button>
       </View>

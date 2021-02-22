@@ -30,7 +30,7 @@ const TextInput: ForwardRefRenderFunction<InputRef, InputProps> = (
   ref,
 ) => {
   const inputElementRef = useRef<any>(null);
-  const theme = useTheme();
+  const { colors } = useTheme();
 
   useImperativeHandle(ref, () => ({
     focus() {
@@ -51,7 +51,7 @@ const TextInput: ForwardRefRenderFunction<InputRef, InputProps> = (
       </ContainerTextInput>
       {error && (
         <ContainerMessage>
-          <Text fontSize="12px" lineHeight="30px" color={theme.colors.error}>
+          <Text fontSize="12px" lineHeight="30px" color={colors.error}>
             {error}
           </Text>
         </ContainerMessage>
