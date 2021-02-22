@@ -1,21 +1,20 @@
-import LinearGradient, {
-  LinearGradientProps,
-} from 'react-native-linear-gradient';
+import { TouchableOpacityProps } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import styled, { css } from 'styled-components/native';
 
-export interface LinearGradientStyledProps extends LinearGradientProps {
+export interface TouchableOpacityStyledProps extends TouchableOpacityProps {
   bgColor?: string;
   width?: string;
   height?: string;
 }
 
-export const ContainerButton = styled(
-  LinearGradient,
-)<LinearGradientStyledProps>`
+export const ContainerButton = styled.TouchableOpacity<TouchableOpacityStyledProps>`
+  background-color: ${({ bgColor, theme }) => bgColor || theme.colors.primary};
   border-radius: 8px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   ${({ width }) =>
     width &&
@@ -27,4 +26,11 @@ export const ContainerButton = styled(
     css`
       height: ${height};
     `};
+`;
+
+export const LinearButton = styled(LinearGradient)`
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 `;

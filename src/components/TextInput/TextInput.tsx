@@ -4,8 +4,9 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import { TextInputProps, View } from 'react-native';
+import { TextInputProps, TouchableOpacity, View } from 'react-native';
 import { useTheme } from 'styled-components';
+import Icon from 'react-native-vector-icons/Feather';
 
 import Text from '../Text/Text';
 
@@ -19,6 +20,8 @@ interface InputProps extends TextInputProps {
   icon?: string;
   error?: string;
   placeholderTop?: string;
+  colorIcon?: string;
+  onPressIcon?(): void;
 }
 
 interface InputRef {
@@ -26,7 +29,15 @@ interface InputRef {
 }
 
 const TextInput: ForwardRefRenderFunction<InputRef, InputProps> = (
-  { icon, defaultValue, error, placeholderTop, ...rest },
+  {
+    icon,
+    defaultValue,
+    error,
+    placeholderTop,
+    colorIcon,
+    onPressIcon,
+    ...rest
+  },
   ref,
 ) => {
   const inputElementRef = useRef<any>(null);
@@ -48,6 +59,11 @@ const TextInput: ForwardRefRenderFunction<InputRef, InputProps> = (
 
       <ContainerTextInput isError={!!error}>
         <TextInputStyled ref={inputElementRef} {...rest} />
+        {icon && (
+          <TouchableOpacity onPress={onPressIcon}>
+            <Icon name={icon} size={18} color={colorIcon || colors.primary} />
+          </TouchableOpacity>
+        )}
       </ContainerTextInput>
       {error && (
         <ContainerMessage>

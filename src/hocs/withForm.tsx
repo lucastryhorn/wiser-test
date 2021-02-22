@@ -14,7 +14,7 @@ export const withForm = (
 ) => () => {
   const { handleSubmit, setValue, register, ...restProps } = useForm({
     mode: 'onSubmit',
-    reValidateMode: 'onChange',
+    reValidateMode: 'onSubmit',
     defaultValues,
     resolver: yupResolver(validationSchema),
   });

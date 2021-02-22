@@ -1,39 +1,38 @@
 import React, { FC } from 'react';
-import { TouchableHighlight } from 'react-native';
 
 import Text from '../Text';
 
-import { ContainerButton, LinearGradientStyledProps } from './syles';
+import {
+  ContainerButton,
+  LinearButton,
+  TouchableOpacityStyledProps,
+} from './syles';
 
-interface ButtonProps extends LinearGradientStyledProps {
+interface ButtonProps extends TouchableOpacityStyledProps {
   children: string;
   loading?: boolean;
   textColor?: string;
-  onPress(): void;
+  colors: (string | number)[];
 }
 
 const Button: FC<ButtonProps> = ({
   children,
   loading,
   textColor,
-  onPress,
-  width,
-  height,
   colors,
+  ...rest
 }) => {
   return (
-    <TouchableHighlight disabled={loading} onPress={onPress}>
-      <ContainerButton
-        start={{ x: 0, y: 0.5 }}
-        end={{ x: 1, y: 0.5 }}
+    <ContainerButton disabled={loading} {...rest}>
+      <LinearButton
         colors={colors}
-        width={width}
-        height={height}>
-        <Text fontSize={'16px'} color={textColor} lineHeight="20px" semiBold>
+        start={{ x: 0, y: 0.5 }}
+        end={{ x: 1, y: 0.5 }}>
+        <Text fontSize={'16px'} color={textColor} lineHeight="20px">
           {children}
         </Text>
-      </ContainerButton>
-    </TouchableHighlight>
+      </LinearButton>
+    </ContainerButton>
   );
 };
 
