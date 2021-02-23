@@ -10,15 +10,30 @@
 yarn install
 ```
 
+# For IOS
+
 ```sh
- For IOS
  cd ios && pod install
 ```
 
 ## Usage
 
+# Run Metro Server
+
 ```sh
 yarn start
+```
+
+# Run in Android
+
+```sh
+yarn android
+```
+
+# Run in IOS
+
+```sh
+yarn ios
 ```
 
 ## Run tests
