@@ -5,6 +5,7 @@ import Text from '../../../../components/Text';
 
 import { isTablet } from '../../../../utils/constants';
 
+import ForgetPassword from '../ForgetPassword';
 import Form from '../Form';
 
 import { ContainerCardLogin, SubTitle } from './styles';
@@ -39,6 +40,7 @@ const CardLogin: FC = () => {
       </SubTitle>
 
       <Form />
+      <ForgetPassword />
     </ContainerCardLogin>
   );
 };

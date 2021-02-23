@@ -1,7 +1,8 @@
 import { TouchableOpacityProps } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
 import styled, { css } from 'styled-components/native';
+
+import { isTablet } from '../../utils/constants';
 
 export interface TouchableOpacityStyledProps extends TouchableOpacityProps {
   bgColor?: string;
@@ -15,6 +16,14 @@ export const ContainerButton = styled.TouchableOpacity<TouchableOpacityStyledPro
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  ${isTablet &&
+  css`
+    shadow-opacity: 0.3;
+    shadow-radius: 3px;
+    shadow-offset: 0 0;
+    elevation: 5;
+  `};
 
   ${({ width }) =>
     width &&

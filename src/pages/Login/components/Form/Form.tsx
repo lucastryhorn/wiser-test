@@ -17,7 +17,6 @@ import { RootState } from '../../../../store/reducers';
 import { Creators as AuthCreators } from '../../../../store/reducers/auth';
 
 import { isTablet } from '../../../../utils/constants';
-import ForgetPassword from '../ForgetPassword';
 
 import { ViewButton } from './styles';
 
@@ -116,8 +115,6 @@ const Form = ({
           ENTRAR
         </Button>
       </ViewButton>
-
-      <ForgetPassword />
     </>
   );
 };
