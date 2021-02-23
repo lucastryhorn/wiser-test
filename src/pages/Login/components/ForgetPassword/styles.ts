@@ -8,6 +8,6 @@ export const ButtonForgetPassword = styled.TouchableOpacity`
   ${!isTablet &&
   css`
     position: absolute;
-    bottom: -150px;
+    bottom: -140px;
   `}
 `;
