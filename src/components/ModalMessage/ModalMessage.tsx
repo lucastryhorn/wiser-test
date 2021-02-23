@@ -33,11 +33,16 @@ const ModalMessage = ({ modal, setModal }: PropsFromRedux) => {
   }, [setModal]);
 
   return (
-    <Modal visible={modal.open} onRequestClose={onClose}>
+    <Modal visible={modal.open} onRequestClose={onClose} transparent>
       <ViewModal>
         <ModalMessageStyled>
           <Text>{modal.message}</Text>
-          <Button colors={['#9D25B0', '#383E71']} onPress={onClose}>
+          <Button
+            colors={['#9D25B0', '#383E71']}
+            width="150px"
+            height="48px"
+            onPress={onClose}
+            textColor="white">
             Ok
           </Button>
         </ModalMessageStyled>

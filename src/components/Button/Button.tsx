@@ -29,7 +29,7 @@ const Button: FC<ButtonProps> = ({
         start={{ x: 0, y: 0.5 }}
         end={{ x: 1, y: 0.5 }}>
         <Text fontSize={'16px'} color={textColor} lineHeight="20px">
-          {children}
+          {loading ? 'AGUARDE' : children}
         </Text>
       </LinearButton>
     </ContainerButton>

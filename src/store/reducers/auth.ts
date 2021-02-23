@@ -24,10 +24,10 @@ export const INITIAL_STATE: ImmutableObject<InitalLoginTypes> = Immutable({
 const getLoginRequest = (state = INITIAL_STATE) => state.set('loading', true);
 
 const getLoginSuccess = (state = INITIAL_STATE, { data }: AnyAction) =>
-  state.merge({ user: data });
+  state.merge({ user: data, loading: false });
 
 const getLoginFailed = (state = INITIAL_STATE, error: Error) =>
-  state.set('error', error);
+  state.merge({ error, loading: false });
 
 export const { Types, Creators } = createActions<AnyAction, GetLoginTypes>({
   getLoginRequest: ['data'],

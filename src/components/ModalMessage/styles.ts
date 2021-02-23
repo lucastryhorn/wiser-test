@@ -13,8 +13,9 @@ export const ViewModal = styled.View<IViewProps>`
 `;
 
 export const ModalMessageStyled = styled.View`
-  width: 90%;
+  width: 60%;
   background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 20px;
+  align-items: center;
 `;

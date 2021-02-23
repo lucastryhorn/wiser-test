@@ -8,7 +8,7 @@ import { Creators as GlobalCreators } from '../../reducers/global';
 
 function* getLoginRequest({ email, password }: LoginType) {
   try {
-    const res = yield api.post('', { email, password });
+    const res = yield api.post('/login', { email, password });
 
     yield put(AuthCreators.getLoginSuccess(res.data));
     yield put(

@@ -1,24 +1,42 @@
-import React, { FC } from 'react';
-import { View } from 'react-native';
+import React, { FC, useMemo } from 'react';
 import { useTheme } from 'styled-components';
+
 import Text from '../../../../components/Text';
+
+import { isTablet } from '../../../../utils/constants';
+
 import Form from '../Form';
-import { ContainerCardLogin } from './styles';
+
+import { ContainerCardLogin, SubTitle } from './styles';
 
 const CardLogin: FC = () => {
   const { colors } = useTheme();
 
+  const memoText = useMemo(() => {
+    if (isTablet) {
+      return 'Para acessar a plataforma,\nfaça seu login.';
+    }
+    return 'Para acessar a plataforma, faça seu login.';
+  }, [isTablet]);
+
   return (
     <ContainerCardLogin>
-      <Text fontSize="24px" lineHeight="32px" textAlign="center">
+      <Text
+        fontSize={isTablet ? '40px' : '24px'}
+        lineHeight={isTablet ? '48px' : '32px'}
+        {...(!isTablet ? { textAlign: 'center' } : {})}>
         Olá, seja{'\n'}
         <Text>bem-vindo!</Text>
       </Text>
-      <View style={{ marginTop: 16, marginBottom: 16 }}>
-        <Text fontSize="12px" lineHeight="20px" semiBold color={colors.primary}>
-          Para acessar a plataforma, faça seu login.
+      <SubTitle>
+        <Text
+          fontSize={isTablet ? '16px' : '12px'}
+          lineHeight="20px"
+          semiBold
+          color={colors.primary}>
+          {memoText}
         </Text>
-      </View>
+      </SubTitle>
 
       <Form />
     </ContainerCardLogin>
