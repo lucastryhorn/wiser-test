@@ -9,11 +9,17 @@
 Here are the technologies used in this project.
 
 ● Typescript;
+
 ● React Native;
+
 ● Hooks;
+
 ● Styled Components;
+
 ● Redux & Redux Saga;
+
 ● Axios;
+
 ● React-Hook-Form;
 
 ## Install
