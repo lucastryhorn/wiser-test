@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/npm/v/wiser.svg)](https://www.npmjs.com/package/wiser)
 
-> Challenge Mobile
+> Challenge Wiser Login React Native
 
 ## Install
 
