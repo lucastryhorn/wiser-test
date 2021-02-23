@@ -10,7 +10,7 @@
 yarn install
 ```
 
-# For IOS
+### For IOS
 
 ```sh
  cd ios && pod install
@@ -18,22 +18,36 @@ yarn install
 
 ## Usage
 
-# Run Metro Server
+### Run Metro Server
 
 ```sh
 yarn start
 ```
 
-# Run in Android
+### Run in Android
 
 ```sh
 yarn android
 ```
 
-# Run in IOS
+### Run in IOS
 
 ```sh
 yarn ios
+```
+
+### Access Success
+
+```sh
+email: eve.holt@reqres.in
+password: any
+```
+
+### Access Error
+
+```sh
+email: test@gmail.com
+password: any
 ```
 
 ## Run tests

@@ -14,4 +14,5 @@ export type Error = {
 export type Modal = {
   open: boolean;
   message?: string;
+  type?: 'success' | 'error';
 };

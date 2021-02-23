@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 
 import Text from '../../../../components/Text';
+
 import { isTablet } from '../../../../utils/constants';
+
 import { ButtonForgetPassword } from './styles';
 
 const ForgetPassword: FC = () => {

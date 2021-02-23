@@ -3,7 +3,7 @@ import { Controller, UseFormMethods } from 'react-hook-form';
 import { TextInput as TextInputNative } from 'react-native';
 import { connect, ConnectedProps } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 
 import { LoginType } from '../../../../commom-types';
 
@@ -106,6 +106,7 @@ const Form = ({
 
       <ViewButton>
         <Button
+          testID="signInButton"
           loading={loading}
           onPress={handleSubmit(submit)}
           width={!isTablet ? '160px' : '100%'}

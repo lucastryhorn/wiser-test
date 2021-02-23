@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from 'react';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 
 import Text from '../../../../components/Text';
 

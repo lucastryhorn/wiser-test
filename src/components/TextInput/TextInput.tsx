@@ -5,7 +5,7 @@ import React, {
   useRef,
 } from 'react';
 import { TextInputProps, TouchableOpacity, View } from 'react-native';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import Text from '../Text/Text';
